@@ -1,0 +1,108 @@
+LAMMPS (3 Aug 2022)
+# Demonstrate POD molecular dynamics using the fitted potential
+
+variable 	nsteps index 200
+variable 	a equal 2.0
+units		metal
+
+# generate the box and atom positions using a BCC lattice
+
+boundary	p p p
+
+atom_modify	map hash
+lattice         bcc $a
+lattice         bcc 2
+Lattice spacing in x,y,z = 2 2 2
+region		box block 0 1 0 1 0 1
+create_box	1 box
+Created orthogonal box = (0 0 0) to (2 2 2)
+  1 by 1 by 1 MPI processor grid
+create_atoms	1 box
+Created 2 atoms
+  using lattice units in orthogonal box = (0 0 0) to (2 2 2)
+  create_atoms CPU = 0.000 seconds
+
+mass 		* 180.88
+
+# create randomized velocities
+
+velocity all create 300.0 4928459 mom yes rot yes dist gaussian
+
+fix 1 all nve
+
+# set up POD potential
+
+#variable 	rcutfac equal 1.0
+pair_style pod
+pair_coeff * * pod.txt coefficients.txt Ta
+
+thermo 10
+
+# Run MD
+
+run             ${nsteps}
+run             200
+Neighbor list info ...
+  update: every = 1 steps, delay = 10 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 6.67
+  ghost atom cutoff = 6.67
+  binsize = 3.335, bins = 1 1 1
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair pod, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 3.531 | 3.531 | 3.531 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   300            87.25954       0              87.298318     -13986246     
+        10   202139.96      62.464059      0              88.592699     -32126716     
+        20   66496.209      84.291635      0              92.886945     -15654509     
+        30   654366.73     -11.827777      0              72.755761      1.0423609e+08
+        40   275064.2       61.565674      0              97.120512     -31583476     
+        50   12174.031      78.910018      0              80.483635     -21516066     
+        60   1721761.1     -132.84324      0              89.711847     -90312382     
+        70   435901.05      40.649886      0              96.994518     -44414877     
+        80   267934.08      82.221247      0              116.85444     -14097724     
+        90   120837.24      83.365131      0              98.984571     -15579780     
+       100   1770781.7     -105.35479      0              123.53672     -86979011     
+       110   1340199.4     -107.32188      0              65.912486      52566921     
+       120   2559889.9     -253.1716       0              77.720134     -1.2444294e+08
+       130   2196113.4     -209.14066      0              74.729269     -15597015     
+       140   1378066       -117.47277      0              60.656247     -1.3940803e+08
+       150   1349329.4     -248.183        0             -73.768495     -1.35003e+08  
+       160   636869.72     -138.93571      0             -56.613836     -1.5806526e+08
+       170   483110.25     -109.07149      0             -46.624588     -1.4788401e+08
+       180   1602197.1     -334.25703      0             -127.1568      -85094031     
+       190   704371.87     -190.63411      0             -99.586904     -1.701943e+08 
+       200   393798.74     -148.93541      0             -98.032929     -1.1788847e+08
+Loop time of 1.3037 on 1 procs for 200 steps with 2 atoms
+
+Performance: 13.255 ns/day, 1.811 hours/ns, 153.409 timesteps/s
+99.8% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.3011     | 1.3011     | 1.3011     |   0.0 | 99.80
+Neigh   | 4.4448e-05 | 4.4448e-05 | 4.4448e-05 |   0.0 |  0.00
+Comm    | 0.001129   | 0.001129   | 0.001129   |   0.0 |  0.09
+Output  | 0.00077847 | 0.00077847 | 0.00077847 |   0.0 |  0.06
+Modify  | 0.00023061 | 0.00023061 | 0.00023061 |   0.0 |  0.02
+Other   |            | 0.0003846  |            |       |  0.03
+
+Nlocal:              2 ave           2 max           2 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:            894 ave         894 max         894 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:          652 ave         652 max         652 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 652
+Ave neighs/atom = 326
+Neighbor list builds = 2
+Dangerous builds = 0
+Total wall time: 0:00:01
