@@ -1,0 +1,87 @@
+LAMMPS (3 Nov 2022)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+fitpod pod10.txt data.pod
+**************** Begin of POD Potentials ****************
+species: Ga N 
+periodic boundary conditions: 1 1 1
+inner cut-off radius: 0.6455473960207618
+outer cut-off radius: 4.926973913254258
+bessel polynomial degree: 2
+inverse polynomial degree: 4
+one-body potential: 1
+two-body potential: 2 4 2
+three-body potential: 2 4 1 3
+four-body SNAP potential: 0 0
+quadratic POD potential: 0
+number of basis functions for one-body potential: 1
+number of basis functions for two-body potential: 2
+number of basis functions for three-body potential: 3
+number of basis functions for four-body potential: 0
+number of descriptors for one-body potential: 2
+number of descriptors for two-body potential: 6
+number of descriptors for three-body potential: 18
+number of descriptors for four-body potential: 0
+number of descriptors for quadratic POD potential: 0
+total number of descriptors for all potentials: 26
+**************** End of POD Potentials ****************
+
+**************** Begin of Data File ****************
+file format: extxyz
+file extension: xyz
+path to training data set: training
+path to test data set: validation
+training fraction: 0.01
+test fraction: 0.99
+randomize training data set: 1
+randomize test data set: 1
+error analysis for training data set: 1
+error analysis for test data set: 1
+energy/force calculation for training data set: 0
+energy/force calculation for test data set: 0
+fitting weight for energy: 100
+fitting weight for force: 1
+fitting weight for stress: 0
+fitting regularization parameter: 1e-10
+**************** End of Data File ****************
+**************** Begin of Training Data Set ****************
+----------------------------------------------------------
+  data file   | number of configurations | number of atoms
+----------------------------------------------------------
+ md_2300K.xyz |              1000        |      192000
+ md_300K.xyz  |              1000        |      192000
+ volume.xyz   |               100        |         800
+----------------------------------------------------------
+number of files: 3
+number of configurations in all files: 2100
+number of atoms in all files: 384800
+minimum number of atoms: 8
+maximum number of atoms: 192
+**************** End of Training Data Set ****************
+**************** Begin of Select Training Data Set ****************
+Select 0.01 fraction of the data set at random using shuffle
+------------------------------------------------------------------------------------------------------
+  data_file   | # configs (selected) | # atoms (selected) | # configs (original) | # atoms (original)
+------------------------------------------------------------------------------------------------------
+ md_2300K.xyz |             10       |          1920      |           1000       |       192000
+ md_300K.xyz  |             10       |          1920      |           1000       |       192000
+ volume.xyz   |              1       |             8      |            100       |          800
+------------------------------------------------------------------------------------------------------
+number of files: 3
+number of configurations in all files (selected and original): 21 and 2100
+number of atoms in all files (selected and original: 3848 and 384800
+**************** End of Select Training Data Set ****************
+**************** Begin of Test Data Set ****************
+----------------------------------------------------------
+  data file   | number of configurations | number of atoms
+----------------------------------------------------------
+ md_2300K.xyz |              1000        |      192000
+ md_300K.xyz  |              1000        |      192000
+ volume.xyz   |               100        |         800
+----------------------------------------------------------
+number of files: 3
+number of configurations in all files: 2100
+number of atoms in all files: 384800
+minimum number of atoms: 8
+maximum number of atoms: 192
+**************** End of Test Data 
