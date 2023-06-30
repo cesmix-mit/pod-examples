@@ -1,0 +1,120 @@
+LAMMPS (3 Nov 2022)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# Demonstrate fitpod for POD potential
+
+units metal
+fitpod Si_param.pod data.pod
+Reading potential file Si_param.pod with DATE: 2022-11-30
+Regular POD descriptors are used for this potential.
+Reading potential file Si_param.pod with DATE: 2022-11-30
+**************** Begin of POD Potentials ****************
+species: Si 
+periodic boundary conditions: 1 1 1
+inner cut-off radius: 1
+outer cut-off radius: 5
+bessel polynomial degree: 3
+inverse polynomial degree: 6
+one-body potential: 1
+two-body potential: 3 6 12
+three-body potential: 3 6 10 8
+four-body SNAP potential: 0 0
+quadratic POD potential: 0
+number of basis functions for one-body potential: 1
+number of basis functions for two-body potential: 12
+number of basis functions for three-body potential: 80
+number of basis functions for four-body potential: 0
+number of descriptors for one-body potential: 1
+number of descriptors for two-body potential: 12
+number of descriptors for three-body potential: 80
+number of descriptors for four-body potential: 0
+number of descriptors for quadratic POD potential: 0
+total number of descriptors for all potentials: 93
+**************** End of POD Potentials ****************
+
+**************** Begin of Data File ****************
+file format: extxyz
+file extension: xyz
+path to training data set: training
+path to test data set: test
+basename for output files: pod
+training fraction: 1
+test fraction: 1
+randomize training data set: 1
+randomize test data set: 1
+error analysis for training data set: 1
+error analysis for test data set: 1
+energy/force calculation for training data set: 0
+energy/force calculation for test data set: 0
+fitting weight for energy: 100
+fitting weight for force: 1
+fitting weight for stress: 0
+fitting weight for energy: 100
+save pod descriptors: 0
+compute pod descriptors: 0
+**************** End of Data File ****************
+**************** Begin of Training Data Set ****************
+----------------------------------------------------------
+  data file   | number of configurations | number of atoms
+----------------------------------------------------------
+ training.xyz |               214        |       13233
+----------------------------------------------------------
+number of files: 1
+number of configurations in all files: 214
+number of atoms in all files: 13233
+minimum number of atoms: 12
+maximum number of atoms: 96
+**************** End of Training Data Set ****************
+**************** Begin of Test Data Set ****************
+------------------------------------------------------
+ data file | number of configurations | number of atoms
+------------------------------------------------------
+ test.xyz |                25        |        1525
+------------------------------------------------------
+number of files: 1
+number of configurations in all files: 25
+number of atoms in all files: 1525
+minimum number of atoms: 24
+maximum number of atoms: 64
+**************** End of Test Data Set ****************
+**************** Begin of Memory Allocation ****************
+maximum number of atoms in periodic domain: 96
+maximum number of atoms in extended domain: 4320
+maximum number of neighbors in extended domain: 414720
+size of double memory: 313712
+size of int memory: 15217
+size of descriptor matrix: 93 x 93
+**************** End of Memory Allocation ****************
+**************** Begin of Least-Squares Fitting ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+**************** End of Least-Squares Fitting ****************
+**************** Begin of Error Calculation ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+**************** End of Error Calculation ****************
+**************** Begin of Error Analysis for the Training Data Set ****************
+----------------------------------------------------------------------------------------------
+      File      | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
+----------------------------------------------------------------------------------------------
+training.xyz          214       13233     0.005762      0.008832      0.087666      0.141274  
+----------------------------------------------------------------------------------------------
+All files             214       13233     0.005762      0.008832      0.087666      0.141274  
+----------------------------------------------------------------------------------------------
+**************** End of Error Analysis for the Training Data Set ****************
+**************** Begin of Error Calculation ****************
+Configuration: # 1
+**************** End of Error Calculation ****************
+**************** Begin of Error Analysis for the Test Data Set ****************
+--------------------------------------------------------------------------------------------
+     File     | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
+--------------------------------------------------------------------------------------------
+test.xyz             25        1525     0.004708      0.006194      0.099436      0.154914  
+--------------------------------------------------------------------------------------------
+All files            25        1525     0.004708      0.006194      0.099436      0.154914  
+--------------------------------------------------------------------------------------------
+**************** End of Error Analysis for the Test Data Set ****************
+
+Total wall time: 0:00:07
