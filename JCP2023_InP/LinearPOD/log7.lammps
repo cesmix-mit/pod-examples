@@ -39,7 +39,7 @@ mass 2 30.98
 
 #include InP.snap
 pair_style pod
-pair_coeff * * LpodInP5_param.pod LpodInP5_coefficients.pod In P
+pair_coeff * * LpodInP7_param.pod LpodInP7_coefficients.pod In P
 **************** Begin of POD Potentials ****************
 species: In P 
 periodic boundary conditions: 1 1 1
@@ -48,20 +48,20 @@ outer cut-off radius: 4.926973913254258
 bessel polynomial degree: 6
 inverse polynomial degree: 8
 one-body potential: 1
-two-body potential: 6 8 11
-three-body potential: 6 8 10 8
+two-body potential: 6 8 16
+three-body potential: 6 8 14 12
 four-body SNAP potential: 0 0
 quadratic POD potential: 0
 number of basis functions for one-body potential: 1
-number of basis functions for two-body potential: 11
-number of basis functions for three-body potential: 80
+number of basis functions for two-body potential: 16
+number of basis functions for three-body potential: 168
 number of basis functions for four-body potential: 0
 number of descriptors for one-body potential: 2
-number of descriptors for two-body potential: 33
-number of descriptors for three-body potential: 480
+number of descriptors for two-body potential: 48
+number of descriptors for three-body potential: 1008
 number of descriptors for four-body potential: 0
 number of descriptors for quadratic POD potential: 0
-total number of descriptors for all potentials: 515
+total number of descriptors for all potentials: 1058
 **************** End of POD Potentials ****************
 
 
@@ -96,31 +96,31 @@ Neighbor list info ...
       bin: standard
 Per MPI rank memory allocation (min/avg/max) = 3.095 | 3.097 | 3.099 Mbytes
    Step          Temp          E_pair         E_mol          TotEng         Press     
-         0   300           -4.839209       0             -4.8004358     -125.32827    
-        10   291.89167     -4.838161       0             -4.8004358      33.297209    
-        20   268.45559     -4.8351318      0             -4.8004356      516.65835    
-        30   232.80194     -4.8305234      0             -4.8004351      1307.3747    
-        40   191.1909      -4.8251447      0             -4.8004344      2272.7825    
-        50   152.85229     -4.8201889      0             -4.8004336      3145.899     
-        60   127.10985     -4.8168614      0             -4.8004332      3645.7636    
-        70   119.00586     -4.8158141      0             -4.8004333      3650.0064    
-        80   127.17838     -4.8168709      0             -4.8004338      3261.021     
-        90   145.61262     -4.819254       0             -4.8004344      2712.1853    
-       100   166.97143     -4.8220149      0             -4.8004349      2216.4187    
-Loop time of 18.0353 on 36 procs for 100 steps with 8000 atoms
+         0   300           -4.8405139      0             -4.8017407      168.41283    
+        10   290.53468     -4.8392905      0             -4.8017406      679.31748    
+        20   263.50109     -4.8357962      0             -4.8017403      2062.3841    
+        30   223.61073     -4.8306399      0             -4.8017396      3944.9124    
+        40   179.74544     -4.8249697      0             -4.8017387      5826.1631    
+        50   143.47538     -4.8202812      0             -4.8017379      7185.0731    
+        60   124.37631     -4.8178125      0             -4.8017376      7660.5121    
+        70   125.1767      -4.8179164      0             -4.8017381      7209.1197    
+        80   140.95182     -4.819956       0             -4.8017388      6107.9128    
+        90   162.71085     -4.8227689      0             -4.8017395      4794.9104    
+       100   181.88179     -4.825247       0             -4.8017399      3667.5315    
+Loop time of 28.3846 on 36 procs for 100 steps with 8000 atoms
 
-Performance: 0.240 ns/day, 100.196 hours/ns, 5.545 timesteps/s, 44.357 katom-step/s
+Performance: 0.152 ns/day, 157.692 hours/ns, 3.523 timesteps/s, 28.184 katom-step/s
 100.0% CPU use with 36 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 15.478     | 16.24      | 17.551     |  14.4 | 90.05
+Pair    | 24.715     | 25.948     | 27.986     |  18.3 | 91.41
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.36787    | 1.7138     | 2.5233     |  44.6 |  9.50
-Output  | 0.0027841  | 0.012143   | 0.035187   |  12.1 |  0.07
-Modify  | 0.00030174 | 0.00032187 | 0.00037142 |   0.0 |  0.00
-Other   |            | 0.06903    |            |       |  0.38
+Comm    | 0.25318    | 2.3342     | 3.5902     |  61.1 |  8.22
+Output  | 0.0034485  | 0.0054364  | 0.0085503  |   2.6 |  0.02
+Modify  | 0.00030218 | 0.00032954 | 0.00035689 |   0.0 |  0.00
+Other   |            | 0.09704    |            |       |  0.34
 
 Nlocal:        222.222 ave         246 max         210 min
 Histogram: 16 0 0 0 8 8 0 0 0 4
@@ -136,4 +136,4 @@ Ave neighs/atom = 34
 Neighbor list builds = 0
 Dangerous builds = 0
 
-Total wall time: 0:00:19
+Total wall time: 0:00:28

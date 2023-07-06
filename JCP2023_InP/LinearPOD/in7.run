@@ -1,6 +1,6 @@
 # Demonstrate SNAP InP potential
 
-log log5.lammps
+log log7.lammps
 
 # Initialize simulation
 
@@ -29,7 +29,7 @@ mass 2 30.98
 
 #include InP.snap
 pair_style pod
-pair_coeff * * LpodInP5_param.pod LpodInP5_coefficients.pod In P
+pair_coeff * * LpodInP7_param.pod LpodInP7_coefficients.pod In P
 
 # Setup output
 
