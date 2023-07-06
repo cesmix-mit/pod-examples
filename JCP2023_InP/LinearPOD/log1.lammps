@@ -1,0 +1,139 @@
+
+# Initialize simulation
+
+variable nsteps index 100
+variable nrep equal 10
+variable a equal 5.83
+units           metal
+
+# generate the box and atom positions using a FCC lattice
+
+variable nx equal ${nrep}
+variable nx equal 10
+variable ny equal ${nrep}
+variable ny equal 10
+variable nz equal ${nrep}
+variable nz equal 10
+
+boundary        p p p
+
+lattice         diamond $a
+lattice         diamond 5.83
+Lattice spacing in x,y,z = 5.83 5.83 5.83
+region          box block 0 ${nx} 0 ${ny} 0 ${nz}
+region          box block 0 10 0 ${ny} 0 ${nz}
+region          box block 0 10 0 10 0 ${nz}
+region          box block 0 10 0 10 0 10
+create_box      2 box
+Created orthogonal box = (0 0 0) to (58.3 58.3 58.3)
+  3 by 3 by 4 MPI processor grid
+create_atoms    1 box basis 5 2 basis 6 2 basis 7 2 basis 8 2
+Created 8000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (58.3 58.3 58.3)
+  create_atoms CPU = 0.001 seconds
+
+mass 1 114.76
+mass 2 30.98
+
+# choose potential
+
+#include InP.snap
+pair_style pod
+pair_coeff * * LpodInP1_param.pod LpodInP1_coefficients.pod In P
+**************** Begin of POD Potentials ****************
+species: In P 
+periodic boundary conditions: 1 1 1
+inner cut-off radius: 0.3
+outer cut-off radius: 4.249009042102008
+bessel polynomial degree: 2
+inverse polynomial degree: 4
+one-body potential: 1
+two-body potential: 2 4 2
+three-body potential: 2 4 1 3
+four-body SNAP potential: 0 0
+quadratic POD potential: 0
+number of basis functions for one-body potential: 1
+number of basis functions for two-body potential: 2
+number of basis functions for three-body potential: 3
+number of basis functions for four-body potential: 0
+number of descriptors for one-body potential: 2
+number of descriptors for two-body potential: 6
+number of descriptors for three-body potential: 18
+number of descriptors for four-body potential: 0
+number of descriptors for quadratic POD potential: 0
+total number of descriptors for all potentials: 26
+**************** End of POD Potentials ****************
+
+
+# Setup output
+
+thermo          10
+thermo_modify norm yes
+
+# Set up NVE run
+
+timestep 0.5e-3
+neighbor 1.0 bin
+neigh_modify once no every 1 delay 0 check yes
+
+# Run MD
+
+velocity all create 300.0 4928459 loop geom
+fix 1 all nve
+run             ${nsteps}
+run             100
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 5.249009
+  ghost atom cutoff = 5.249009
+  binsize = 2.6245045, bins = 23 23 23
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair pod, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 3.084 | 3.085 | 3.087 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   300           -4.8442325      0             -4.8054593     -34584.651    
+        10   289.39404     -4.8428616      0             -4.8054592     -34036.67     
+        20   259.28233     -4.8389694      0             -4.8054587     -32541.808    
+        30   215.68494     -4.8333339      0             -4.8054579     -30488.217    
+        40   168.85115     -4.8272799      0             -4.8054569     -28375.237    
+        50   130.40185     -4.8223098      0             -4.8054562     -26647.228    
+        60   109.25974     -4.8195771      0             -4.8054559     -25591.542    
+        70   108.48788     -4.8194777      0             -4.8054562     -25298.961    
+        80   124.50646     -4.8215487      0             -4.8054569     -25658.236    
+        90   148.92386     -4.8247053      0             -4.8054577     -26380.735    
+       100   171.92194     -4.8276783      0             -4.8054584     -27074.848    
+Loop time of 2.00234 on 36 procs for 100 steps with 8000 atoms
+
+Performance: 2.157 ns/day, 11.124 hours/ns, 49.941 timesteps/s, 399.532 katom-step/s
+100.0% CPU use with 36 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.7464     | 1.8179     | 1.9488     |   4.3 | 90.79
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.048855   | 0.17273    | 0.2509     |  14.0 |  8.63
+Output  | 0.00060678 | 0.0018335  | 0.0046272  |   3.8 |  0.09
+Modify  | 0.00027122 | 0.0002909  | 0.00032341 |   0.0 |  0.01
+Other   |            | 0.009589   |            |       |  0.48
+
+Nlocal:        222.222 ave         246 max         210 min
+Histogram: 16 0 0 0 8 8 0 0 0 4
+Nghost:        654.889 ave         722 max         604 min
+Histogram: 4 8 4 0 4 4 8 0 0 4
+Neighs:              0 ave           0 max           0 min
+Histogram: 36 0 0 0 0 0 0 0 0 0
+FullNghs:      6222.22 ave        6888 max        5880 min
+Histogram: 16 0 0 0 8 8 0 0 0 4
+
+Total # of neighbors = 224000
+Ave neighs/atom = 28
+Neighbor list builds = 0
+Dangerous builds = 0
+
+Total wall time: 0:00:02
