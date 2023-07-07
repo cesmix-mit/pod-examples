@@ -1,0 +1,127 @@
+LAMMPS (8 Feb 2023)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# Demonstrate SNAP InP potential
+
+# Initialize simulation
+
+variable nsteps index 100
+variable nrep equal 10
+variable a equal 5.83
+units           metal
+
+# generate the box and atom positions using a FCC lattice
+
+variable nx equal ${nrep}
+variable nx equal 10
+variable ny equal ${nrep}
+variable ny equal 10
+variable nz equal ${nrep}
+variable nz equal 10
+
+boundary        p p p
+
+lattice         diamond $a
+lattice         diamond 5.83
+Lattice spacing in x,y,z = 5.83 5.83 5.83
+region          box block 0 ${nx} 0 ${ny} 0 ${nz}
+region          box block 0 10 0 ${ny} 0 ${nz}
+region          box block 0 10 0 10 0 ${nz}
+region          box block 0 10 0 10 0 10
+create_box      2 box
+Created orthogonal box = (0 0 0) to (58.3 58.3 58.3)
+  3 by 3 by 4 MPI processor grid
+create_atoms    1 box basis 5 2 basis 6 2 basis 7 2 basis 8 2
+Created 8000 atoms
+  using lattice units in orthogonal box = (0 0 0) to (58.3 58.3 58.3)
+  create_atoms CPU = 0.001 seconds
+
+mass 1 114.76
+mass 2 30.98
+
+# choose potential
+
+#include InP.snap
+pair_style pace recursive
+ACE version: 2022.6.27
+Recursive evaluator is used
+pair_coeff * * InP_pot.yace In P
+Loading InP_pot.yace
+Total number of basis functions
+	In: 16 (r=1) 3011 (r>1)
+	P: 16 (r=1) 3011 (r>1)
+Mapping LAMMPS atom type #1(In) -> ACE species type #0
+Mapping LAMMPS atom type #2(P) -> ACE species type #1
+
+# Setup output
+
+thermo          10
+thermo_modify norm yes
+
+# Set up NVE run
+
+timestep 0.5e-3
+neighbor 1.0 bin
+neigh_modify once no every 1 delay 0 check yes
+
+# Run MD
+
+velocity all create 300.0 4928459 loop geom
+fix 1 all nve
+run             ${nsteps}
+run             100
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 6.79
+  ghost atom cutoff = 6.79
+  binsize = 3.395, bins = 18 18 18
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair pace, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 3.097 | 3.099 | 3.102 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   300           -3.4799589      0             -3.4411857      1739.1462    
+        10   284.40726     -3.4779431      0             -3.4411852      1848.7722    
+        20   243.4206      -3.4726446      0             -3.4411839      2125.2069    
+        30   192.25752     -3.4660305      0             -3.4411823      2454.2736    
+        40   149.73223     -3.4605331      0             -3.4411811      2651.1107    
+        50   130.66747     -3.4580687      0             -3.4411807      2547.3422    
+        60   139.82741     -3.4592531      0             -3.4411813      2086.867     
+        70   170.41682     -3.4632079      0             -3.4411825      1336.8436    
+        80   207.76199     -3.4680358      0             -3.4411838      455.09588    
+        90   235.84424     -3.4716662      0             -3.4411848     -377.55198    
+       100   243.40231     -3.4726433      0             -3.441185      -1023.1294    
+Loop time of 69.6727 on 36 procs for 100 steps with 8000 atoms
+
+Performance: 0.062 ns/day, 387.070 hours/ns, 1.435 timesteps/s, 11.482 katom-step/s
+99.9% CPU use with 36 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 64.585     | 66.862     | 69.409     |  17.9 | 95.97
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.24461    | 2.741      | 5.023      |  88.8 |  3.93
+Output  | 0.00088747 | 0.0086707  | 0.019054   |   8.5 |  0.01
+Modify  | 0.00066449 | 0.00077667 | 0.001022   |   0.0 |  0.00
+Other   |            | 0.06012    |            |       |  0.09
+
+Nlocal:        222.222 ave         246 max         210 min
+Histogram: 16 0 0 0 8 8 0 0 0 4
+Nghost:        960.778 ave        1041 max         904 min
+Histogram: 4 8 4 0 8 0 8 0 0 4
+Neighs:              0 ave           0 max           0 min
+Histogram: 36 0 0 0 0 0 0 0 0 0
+FullNghs:      6888.89 ave        7626 max        6476 min
+Histogram: 12 4 0 0 8 8 0 0 0 4
+
+Total # of neighbors = 248000
+Ave neighs/atom = 31
+Neighbor list builds = 0
+Dangerous builds = 0
+
+Total wall time: 0:01:14

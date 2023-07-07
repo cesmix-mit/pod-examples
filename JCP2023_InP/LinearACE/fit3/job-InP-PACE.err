@@ -1,0 +1,20 @@
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:95: RuntimeWarning: divide by zero encountered in scalar divide
+  rsq = 1 - ssr / np.sum(np.square(g['truths'] - (g['truths'] / nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:102: RuntimeWarning: divide by zero encountered in scalar divide
+  w_rsq = 1 - w_ssr / np.sum(np.square((g['weights'] * g['truths']) - (g['weights'] * g['truths'] / w_nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:95: RuntimeWarning: divide by zero encountered in scalar divide
+  rsq = 1 - ssr / np.sum(np.square(g['truths'] - (g['truths'] / nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:102: RuntimeWarning: divide by zero encountered in scalar divide
+  w_rsq = 1 - w_ssr / np.sum(np.square((g['weights'] * g['truths']) - (g['weights'] * g['truths'] / w_nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:95: RuntimeWarning: divide by zero encountered in scalar divide
+  rsq = 1 - ssr / np.sum(np.square(g['truths'] - (g['truths'] / nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:102: RuntimeWarning: divide by zero encountered in scalar divide
+  w_rsq = 1 - w_ssr / np.sum(np.square((g['weights'] * g['truths']) - (g['weights'] * g['truths'] / w_nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:95: RuntimeWarning: divide by zero encountered in scalar divide
+  rsq = 1 - ssr / np.sum(np.square(g['truths'] - (g['truths'] / nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:102: RuntimeWarning: divide by zero encountered in scalar divide
+  w_rsq = 1 - w_ssr / np.sum(np.square((g['weights'] * g['truths']) - (g['weights'] * g['truths'] / w_nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:95: RuntimeWarning: divide by zero encountered in scalar divide
+  rsq = 1 - ssr / np.sum(np.square(g['truths'] - (g['truths'] / nconfig).sum()))
+/ascldap/users/adrohsk/FitSNAP/fitsnap3lib/solvers/solver.py:102: RuntimeWarning: divide by zero encountered in scalar divide
+  w_rsq = 1 - w_ssr / np.sum(np.square((g['weights'] * g['truths']) - (g['weights'] * g['truths'] / w_nconfig).sum()))

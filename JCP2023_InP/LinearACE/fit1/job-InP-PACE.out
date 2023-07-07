@@ -1,0 +1,36 @@
+no change     /projects/netpub/anaconda3/2022.05/condabin/conda
+no change     /projects/netpub/anaconda3/2022.05/bin/conda
+no change     /projects/netpub/anaconda3/2022.05/bin/conda-env
+no change     /projects/netpub/anaconda3/2022.05/bin/activate
+no change     /projects/netpub/anaconda3/2022.05/bin/deactivate
+no change     /projects/netpub/anaconda3/2022.05/etc/profile.d/conda.sh
+no change     /projects/netpub/anaconda3/2022.05/etc/fish/conf.d/conda.fish
+no change     /projects/netpub/anaconda3/2022.05/shell/condabin/Conda.psm1
+no change     /projects/netpub/anaconda3/2022.05/shell/condabin/conda-hook.ps1
+no change     /projects/netpub/anaconda3/2022.05/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /projects/netpub/anaconda3/2022.05/etc/profile.d/conda.csh
+no change     /ascldap/users/adrohsk/.bashrc
+No action taken.
+
+WARNING: Bulk train size 1 + test size 1 > nfiles 1
+         Forcing testing size to add up properly.
+
+'scrape_configs' took 558.75 ms on rank 0
+'process_configs' took 2520.32 ms on rank 0
+printing fit:  [ -9.60276795   6.04166779   3.99342153 -13.55032532  11.940038
+   1.94912159  -6.98645864   6.20461487  -9.20531124   0.90886323
+ -21.16385305   0.67151351   1.58596665  30.78149836  19.40631746
+   3.48303092  -9.26018017  -4.31728187  -4.12381964  16.02721115
+  27.52364889  14.722848    -6.54852082 -36.63636654 -58.70482278
+  -0.09314907   1.04140487  -0.63420737   0.07469577  -2.17379818
+   4.72910854  -0.67948171   2.74326561  -3.94053538   0.93362423
+   6.69702866 -16.35600272  -0.22095342  11.9400396  -18.9920169
+   6.75932068  -0.13829469   9.3996481  -27.36145075  12.02435431
+ -35.34890951  28.78604034  30.18379648  -9.0918709   24.91271635
+  -7.64950719   5.90496104   7.13566091  55.42076451  -0.18311153
+ -22.60607155  -2.17980449 -73.21036958 -31.75640285  52.31796287
+   0.18914354  -3.44941068   0.82220903  -0.83149854  -3.85284365
+  -0.29293414  -6.38702391   1.20049556  -8.11589994   0.68000119]
+'fit' took 491.35 ms on rank 0
+'error_analysis' took 1462.92 ms on rank 0
+'write_output' took 1937.57 ms on rank 0

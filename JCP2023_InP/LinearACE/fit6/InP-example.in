@@ -1,0 +1,83 @@
+[ACE]
+numTypes = 2
+rcutfac = 5.790  5.007  5.007  4.224
+lambda = 1.737  1.502  1.502  1.267
+rcinner = 1.705  1.403  1.403  1.100
+drcinner = 0.01 0.01 0.01 0.01
+ranks = 1 2 3 4
+lmax =  1 4 6 1
+nmax =  8 6 2 1
+mumax = 2
+lmin = 0 0 0 0
+nmaxbase = 8
+type = In P
+bzeroflag = 0
+
+[CALCULATOR]
+calculator = LAMMPSPACE
+energy = 1
+force = 1
+stress = 0
+
+[ESHIFT]
+In = -1.65967588701534
+P = 4.38159549501534
+
+[SOLVER]
+solver = RIDGE
+compute_testerrs = 1
+detailed_errors = 1
+
+[RIDGE]
+local_solver = 1
+alpha = 1.e-6
+
+[SCRAPER]
+scraper = JSON
+
+[PATH]
+dataPath = ../../InP_JPCA2020/JSON
+
+[OUTFILE]
+output_style = PACE
+metrics = InP_metrics.md
+potential = InP_pot
+
+[REFERENCE]
+units = metal
+atom_style = atomic
+pair_style = hybrid/overlay zero 5.8 
+pair_coeff1 = * * zero
+
+[GROUPS]
+group_sections = name training_size testing_size eweight fweight vweight
+group_types = str float float float float float
+smartweights = 1
+random_sampling = 0
+aa       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+aIn       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+aP       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+Bulk       =     0.8     0.2      1.00000000      0.00100000      1.E-12
+EOS       =     0.8      0.2      40.00000000      100.00000000      1.E-12
+iIn       =     0.8      0.2      2.00000000      100.00000000      1.E-12
+iP       =     0.8      0.2      2.00000000      100.00000000      1.E-12
+s_aa       =     0.8      0.2      10.00000000      100.00000000      1.E-12
+s_aIn       =     0.8      0.2      10.00000000      100.00000000      1.E-12
+s_aP       =     0.8      0.2      10.00000000      200.00000000      1.E-12
+Shear       =     0.8      0.2      22.00000000      100.00000000      1.E-12
+s_iIn       =     0.8      0.2      10.00000000      300.00000000      1.E-12
+s_iP       =     0.8      0.2      10.00000000      300.00000000      1.E-12
+Strain       =     0.8      0.2      13.00000000      0.00100000      1.E-12
+s_vIn       =     0.8      0.2      10.00000000      100.00000000      1.E-12
+s_vP       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+s_vv       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+vP       =     0.8      0.2      1.00000000      100.00000000      1.E-12
+
+
+[EXTRAS]
+dump_descriptors = 0
+dump_truth = 0
+dump_weights = 0
+
+[MEMORY]
+override = 0
