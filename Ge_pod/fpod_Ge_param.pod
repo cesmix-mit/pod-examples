@@ -9,11 +9,11 @@ pbc 1 1 1
 rin 1.0
 
 # outer cut-off radius
-rcut 4.25
+rcut 6.0
 
 # polynomial degrees for radial basis functions
 bessel_polynomial_degree 3 
-inverse_polynomial_degree 6
+inverse_polynomial_degree 8
 
 # two-body linear POD potential
 twobody_number_radial_basis_functions 10

@@ -4,17 +4,17 @@ OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98
 # Demonstrate fitpod for POD potential
 
 units metal
-fitpod Ge_param_fastpod.pod data.pod
-Reading potential file Ge_param_fastpod.pod with DATE: 2022-11-30
+fitpod fpod_Ge_param.pod data.pod
+Reading potential file fpod_Ge_param.pod with DATE: 2022-11-30
 Fast POD descriptors are used for this potential.
-Reading potential file Ge_param_fastpod.pod with DATE: 2022-11-30
+Reading potential file fpod_Ge_param.pod with DATE: 2022-11-30
 **************** Begin of POD Potentials ****************
 species: Ge 
 periodic boundary conditions: 1 1 1
 inner cut-off radius: 1
-outer cut-off radius: 4.25
+outer cut-off radius: 6
 bessel polynomial degree: 3
-inverse polynomial degree: 6
+inverse polynomial degree: 8
 one-body potential: 1
 two-body radial basis functions: 10
 three-body radial basis functions: 8
@@ -62,11 +62,12 @@ compute pod descriptors: 0
 ----------------------------------------------------------
   data file   | number of configurations | number of atoms
 ----------------------------------------------------------
+ test.xyz     |                25        |        1568
  training.xyz |               228        |       14072
 ----------------------------------------------------------
-number of files: 1
-number of configurations in all files: 228
-number of atoms in all files: 14072
+number of files: 2
+number of configurations in all files: 253
+number of atoms in all files: 15640
 minimum number of atoms: 12
 maximum number of atoms: 64
 **************** End of Training Data Set ****************
@@ -83,9 +84,9 @@ minimum number of atoms: 40
 maximum number of atoms: 64
 **************** End of Test Data Set ****************
 maximum number of atoms in periodic domain: 64
-maximum number of atoms in extended domain: 1728
+maximum number of atoms in extended domain: 1800
 maximum number of neighbors in extended domain: 110592
-size of double memory: 5692416
+size of double memory: 14942592
 size of int memory: 1
 size of descriptor matrix: 1853 x 1853
 **************** End of Memory Allocation ****************
@@ -103,9 +104,10 @@ Configuration: # 201
 ----------------------------------------------------------------------------------------------
       File      | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
 ----------------------------------------------------------------------------------------------
-training.xyz          228       14072     0.003223      0.005156      0.054137      0.080579  
+test.xyz               25        1568     0.000865      0.001750      0.045067      0.067303  
+training.xyz          228       14072     0.001011      0.001777      0.043483      0.066304  
 ----------------------------------------------------------------------------------------------
-All files             228       14072     0.003223      0.005156      0.054137      0.080579  
+All files             253       15640     0.000997      0.001775      0.043642      0.066404  
 ----------------------------------------------------------------------------------------------
 **************** End of Error Analysis for the Training Data Set ****************
 **************** Begin of Error Calculation ****************
@@ -115,10 +117,10 @@ Configuration: # 1
 --------------------------------------------------------------------------------------------
      File     | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
 --------------------------------------------------------------------------------------------
-test.xyz             25        1568     0.003623      0.005750      0.063707      0.106431  
+test.xyz             25        1568     0.000865      0.001750      0.045067      0.067303  
 --------------------------------------------------------------------------------------------
-All files            25        1568     0.003623      0.005750      0.063707      0.106431  
+All files            25        1568     0.000865      0.001750      0.045067      0.067303  
 --------------------------------------------------------------------------------------------
 **************** End of Error Analysis for the Test Data Set ****************
 
-Total wall time: 0:00:08
+Total wall time: 0:00:16
