@@ -19,11 +19,11 @@ inverse_polynomial_degree 6
 onebody 1
 
 # two-body linear POD potential
-twobody_number_radial_basis_functions 12
+twobody_number_radial_basis_functions 8
 
 # three-body linear POD potential
-threebody_number_radial_basis_functions 10
-threebody_number_angular_basis_functions 8
+threebody_number_radial_basis_functions 6
+threebody_number_angular_basis_functions 5
 
 # four-body linear SNAP potential
 fourbody_snap_twojmax 0 
