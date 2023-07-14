@@ -24,6 +24,7 @@ twobody_number_radial_basis_functions 12
 # three-body linear POD potential
 threebody_number_radial_basis_functions 10
 threebody_number_angular_basis_functions 8
+
 # four-body linear SNAP potential
 fourbody_snap_twojmax 0 
 

@@ -42,7 +42,7 @@ file format: extxyz
 file extension: xyz
 path to training data set: training
 path to test data set: test
-basename for output files: pod
+basename for output files: fpod
 training fraction: 1
 test fraction: 1
 randomize training data set: 1
@@ -82,11 +82,11 @@ number of atoms in all files: 1568
 minimum number of atoms: 40
 maximum number of atoms: 64
 **************** End of Test Data Set ****************
-**************** Begin of Memory Allocation ****************
 maximum number of atoms in periodic domain: 64
 maximum number of atoms in extended domain: 1728
 maximum number of neighbors in extended domain: 110592
-size of descriptor derivative matrix: 3072 x 1853
+size of double memory: 5692416
+size of int memory: 1
 size of descriptor matrix: 1853 x 1853
 **************** End of Memory Allocation ****************
 **************** Begin of Least-Squares Fitting ****************

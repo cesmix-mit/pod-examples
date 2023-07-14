@@ -1,5 +1,5 @@
 # Demonstrate fitpod for POD potential
 
 units metal
-fitpod Ge_param.pod data.pod
+fitpod fpod_Ge_param.pod data.pod
 
