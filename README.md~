@@ -1,0 +1,21 @@
+### POD LAMMPS examples
+
+These examples are meant to used with the `ML-POD` package from the  Git repo
+
+      https://github.com/cesmix-mit/lammps/tree/fastpod
+
+TrainingData contains training datasets for many different materials
+
+TestData contains test datasets for some materials
+
+FastPOD include many examples on fitting and running MD with ML-POD in LAMMPS. 
+
+To fit FPOD potential, please go to a subfolder in FastPOD and do
+
+    lmp -in fit.pod
+
+To run a MD simulation with the trained FPOD potential, please do
+
+    lmp -in mdrun.pod
+
+

@@ -1,0 +1,4 @@
+# Demonstrate fitpod for POD potential for InP
+
+units metal
+fitpod InP_param.pod InP_data.pod

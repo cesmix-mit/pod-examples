@@ -1,0 +1,4 @@
+# Demonstrate fitpod for POD potential for Si
+
+units metal
+fitpod Si_param.pod Si_data.pod

@@ -1,0 +1,4 @@
+# Demonstrate fitpod for POD potential for TiO2
+
+units metal
+fitpod TiO2_param.pod TiO2_data.pod

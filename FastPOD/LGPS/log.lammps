@@ -1,0 +1,494 @@
+LAMMPS (15 Jun 2023 - Development - patch_15Jun2023-208-g9fb1ad52a0-modified)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# Demonstrate fitpod for POD potential for LGPS
+
+units metal
+fitpod LGPS_param.pod LGPS_data.pod
+Fast POD descriptors are used for this potential.
+**************** Begin of POD Potentials ****************
+species: Li Ge P S 
+periodic boundary conditions: 1 1 1
+inner cut-off radius: 1
+outer cut-off radius: 5
+bessel polynomial degree: 8
+inverse polynomial degree: 12
+one-body potential: 1
+two-body radial basis functions: 10
+three-body radial basis functions: 6
+three-body angular degree: 3
+four-body radial basis functions: 4
+four-body angular degree: 2
+five-body radial basis functions: 2
+five-body angular degree: 1
+six-body radial basis functions: 0
+six-body angular degree: 0
+seven-body radial basis functions: 0
+seven-body angular degree: 0
+number of descriptors for one-body potential: 4
+number of descriptors for two-body potential: 100
+number of descriptors for three-body potential: 960
+number of descriptors for four-body potential: 1280
+number of descriptors for five-body potential: 1100
+number of descriptors for six-body potential: 0
+number of descriptors for seven-body potential: 0
+total number of descriptors for all potentials: 3444
+**************** End of POD Potentials ****************
+
+**************** Begin of Data File ****************
+file format: extxyz
+file extension: xyz
+path to training data set: ../../TrainingData/LGPS
+path to test data set: ../../TrainingData/LGPS
+basename for output files: LGPS
+training fraction: 1
+test fraction: 1
+randomize training data set: 1
+randomize test data set: 1
+error analysis for training data set: 1
+error analysis for test data set: 0
+energy/force calculation for training data set: 0
+energy/force calculation for test data set: 0
+fitting weight for energy: 100
+fitting weight for force: 1
+fitting weight for stress: 0
+save pod descriptors: 0
+compute pod descriptors: 0
+**************** End of Data File ****************
+**************** Begin of Training Data Set ****************
+----------------------------------------------------------
+  data file   | number of configurations | number of atoms
+----------------------------------------------------------
+ md_1000K.xyz |              2500        |      125000
+ md_1300K.xyz |              5000        |      250000
+ md_1600K.xyz |              3000        |      150000
+ md_2000K.xyz |              1742        |       87100
+ md_300K.xyz  |              3000        |      150000
+ md_600K.xyz  |              4446        |      222300
+----------------------------------------------------------
+number of files: 6
+number of configurations in all files: 19688
+number of atoms in all files: 984400
+minimum number of atoms: 50
+maximum number of atoms: 50
+**************** End of Training Data Set ****************
+maximum number of atoms in periodic domain: 50
+maximum number of atoms in extended domain: 1350
+maximum number of neighbors in extended domain: 67500
+size of double memory: 14030856
+size of int memory: 1
+size of descriptor matrix: 3444 x 3444
+**************** End of Memory Allocation ****************
+**************** Begin of Least-Squares Fitting ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+Configuration: # 301
+Configuration: # 401
+Configuration: # 501
+Configuration: # 601
+Configuration: # 701
+Configuration: # 801
+Configuration: # 901
+Configuration: # 1001
+Configuration: # 1101
+Configuration: # 1201
+Configuration: # 1301
+Configuration: # 1401
+Configuration: # 1501
+Configuration: # 1601
+Configuration: # 1701
+Configuration: # 1801
+Configuration: # 1901
+Configuration: # 2001
+Configuration: # 2101
+Configuration: # 2201
+Configuration: # 2301
+Configuration: # 2401
+Configuration: # 2501
+Configuration: # 2601
+Configuration: # 2701
+Configuration: # 2801
+Configuration: # 2901
+Configuration: # 3001
+Configuration: # 3101
+Configuration: # 3201
+Configuration: # 3301
+Configuration: # 3401
+Configuration: # 3501
+Configuration: # 3601
+Configuration: # 3701
+Configuration: # 3801
+Configuration: # 3901
+Configuration: # 4001
+Configuration: # 4101
+Configuration: # 4201
+Configuration: # 4301
+Configuration: # 4401
+Configuration: # 4501
+Configuration: # 4601
+Configuration: # 4701
+Configuration: # 4801
+Configuration: # 4901
+Configuration: # 5001
+Configuration: # 5101
+Configuration: # 5201
+Configuration: # 5301
+Configuration: # 5401
+Configuration: # 5501
+Configuration: # 5601
+Configuration: # 5701
+Configuration: # 5801
+Configuration: # 5901
+Configuration: # 6001
+Configuration: # 6101
+Configuration: # 6201
+Configuration: # 6301
+Configuration: # 6401
+Configuration: # 6501
+Configuration: # 6601
+Configuration: # 6701
+Configuration: # 6801
+Configuration: # 6901
+Configuration: # 7001
+Configuration: # 7101
+Configuration: # 7201
+Configuration: # 7301
+Configuration: # 7401
+Configuration: # 7501
+Configuration: # 7601
+Configuration: # 7701
+Configuration: # 7801
+Configuration: # 7901
+Configuration: # 8001
+Configuration: # 8101
+Configuration: # 8201
+Configuration: # 8301
+Configuration: # 8401
+Configuration: # 8501
+Configuration: # 8601
+Configuration: # 8701
+Configuration: # 8801
+Configuration: # 8901
+Configuration: # 9001
+Configuration: # 9101
+Configuration: # 9201
+Configuration: # 9301
+Configuration: # 9401
+Configuration: # 9501
+Configuration: # 9601
+Configuration: # 9701
+Configuration: # 9801
+Configuration: # 9901
+Configuration: # 10001
+Configuration: # 10101
+Configuration: # 10201
+Configuration: # 10301
+Configuration: # 10401
+Configuration: # 10501
+Configuration: # 10601
+Configuration: # 10701
+Configuration: # 10801
+Configuration: # 10901
+Configuration: # 11001
+Configuration: # 11101
+Configuration: # 11201
+Configuration: # 11301
+Configuration: # 11401
+Configuration: # 11501
+Configuration: # 11601
+Configuration: # 11701
+Configuration: # 11801
+Configuration: # 11901
+Configuration: # 12001
+Configuration: # 12101
+Configuration: # 12201
+Configuration: # 12301
+Configuration: # 12401
+Configuration: # 12501
+Configuration: # 12601
+Configuration: # 12701
+Configuration: # 12801
+Configuration: # 12901
+Configuration: # 13001
+Configuration: # 13101
+Configuration: # 13201
+Configuration: # 13301
+Configuration: # 13401
+Configuration: # 13501
+Configuration: # 13601
+Configuration: # 13701
+Configuration: # 13801
+Configuration: # 13901
+Configuration: # 14001
+Configuration: # 14101
+Configuration: # 14201
+Configuration: # 14301
+Configuration: # 14401
+Configuration: # 14501
+Configuration: # 14601
+Configuration: # 14701
+Configuration: # 14801
+Configuration: # 14901
+Configuration: # 15001
+Configuration: # 15101
+Configuration: # 15201
+Configuration: # 15301
+Configuration: # 15401
+Configuration: # 15501
+Configuration: # 15601
+Configuration: # 15701
+Configuration: # 15801
+Configuration: # 15901
+Configuration: # 16001
+Configuration: # 16101
+Configuration: # 16201
+Configuration: # 16301
+Configuration: # 16401
+Configuration: # 16501
+Configuration: # 16601
+Configuration: # 16701
+Configuration: # 16801
+Configuration: # 16901
+Configuration: # 17001
+Configuration: # 17101
+Configuration: # 17201
+Configuration: # 17301
+Configuration: # 17401
+Configuration: # 17501
+Configuration: # 17601
+Configuration: # 17701
+Configuration: # 17801
+Configuration: # 17901
+Configuration: # 18001
+Configuration: # 18101
+Configuration: # 18201
+Configuration: # 18301
+Configuration: # 18401
+Configuration: # 18501
+Configuration: # 18601
+Configuration: # 18701
+Configuration: # 18801
+Configuration: # 18901
+Configuration: # 19001
+Configuration: # 19101
+Configuration: # 19201
+Configuration: # 19301
+Configuration: # 19401
+Configuration: # 19501
+Configuration: # 19601
+**************** End of Least-Squares Fitting ****************
+**************** Begin of Error Calculation ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+Configuration: # 301
+Configuration: # 401
+Configuration: # 501
+Configuration: # 601
+Configuration: # 701
+Configuration: # 801
+Configuration: # 901
+Configuration: # 1001
+Configuration: # 1101
+Configuration: # 1201
+Configuration: # 1301
+Configuration: # 1401
+Configuration: # 1501
+Configuration: # 1601
+Configuration: # 1701
+Configuration: # 1801
+Configuration: # 1901
+Configuration: # 2001
+Configuration: # 2101
+Configuration: # 2201
+Configuration: # 2301
+Configuration: # 2401
+Configuration: # 2501
+Configuration: # 2601
+Configuration: # 2701
+Configuration: # 2801
+Configuration: # 2901
+Configuration: # 3001
+Configuration: # 3101
+Configuration: # 3201
+Configuration: # 3301
+Configuration: # 3401
+Configuration: # 3501
+Configuration: # 3601
+Configuration: # 3701
+Configuration: # 3801
+Configuration: # 3901
+Configuration: # 4001
+Configuration: # 4101
+Configuration: # 4201
+Configuration: # 4301
+Configuration: # 4401
+Configuration: # 4501
+Configuration: # 4601
+Configuration: # 4701
+Configuration: # 4801
+Configuration: # 4901
+Configuration: # 5001
+Configuration: # 5101
+Configuration: # 5201
+Configuration: # 5301
+Configuration: # 5401
+Configuration: # 5501
+Configuration: # 5601
+Configuration: # 5701
+Configuration: # 5801
+Configuration: # 5901
+Configuration: # 6001
+Configuration: # 6101
+Configuration: # 6201
+Configuration: # 6301
+Configuration: # 6401
+Configuration: # 6501
+Configuration: # 6601
+Configuration: # 6701
+Configuration: # 6801
+Configuration: # 6901
+Configuration: # 7001
+Configuration: # 7101
+Configuration: # 7201
+Configuration: # 7301
+Configuration: # 7401
+Configuration: # 7501
+Configuration: # 7601
+Configuration: # 7701
+Configuration: # 7801
+Configuration: # 7901
+Configuration: # 8001
+Configuration: # 8101
+Configuration: # 8201
+Configuration: # 8301
+Configuration: # 8401
+Configuration: # 8501
+Configuration: # 8601
+Configuration: # 8701
+Configuration: # 8801
+Configuration: # 8901
+Configuration: # 9001
+Configuration: # 9101
+Configuration: # 9201
+Configuration: # 9301
+Configuration: # 9401
+Configuration: # 9501
+Configuration: # 9601
+Configuration: # 9701
+Configuration: # 9801
+Configuration: # 9901
+Configuration: # 10001
+Configuration: # 10101
+Configuration: # 10201
+Configuration: # 10301
+Configuration: # 10401
+Configuration: # 10501
+Configuration: # 10601
+Configuration: # 10701
+Configuration: # 10801
+Configuration: # 10901
+Configuration: # 11001
+Configuration: # 11101
+Configuration: # 11201
+Configuration: # 11301
+Configuration: # 11401
+Configuration: # 11501
+Configuration: # 11601
+Configuration: # 11701
+Configuration: # 11801
+Configuration: # 11901
+Configuration: # 12001
+Configuration: # 12101
+Configuration: # 12201
+Configuration: # 12301
+Configuration: # 12401
+Configuration: # 12501
+Configuration: # 12601
+Configuration: # 12701
+Configuration: # 12801
+Configuration: # 12901
+Configuration: # 13001
+Configuration: # 13101
+Configuration: # 13201
+Configuration: # 13301
+Configuration: # 13401
+Configuration: # 13501
+Configuration: # 13601
+Configuration: # 13701
+Configuration: # 13801
+Configuration: # 13901
+Configuration: # 14001
+Configuration: # 14101
+Configuration: # 14201
+Configuration: # 14301
+Configuration: # 14401
+Configuration: # 14501
+Configuration: # 14601
+Configuration: # 14701
+Configuration: # 14801
+Configuration: # 14901
+Configuration: # 15001
+Configuration: # 15101
+Configuration: # 15201
+Configuration: # 15301
+Configuration: # 15401
+Configuration: # 15501
+Configuration: # 15601
+Configuration: # 15701
+Configuration: # 15801
+Configuration: # 15901
+Configuration: # 16001
+Configuration: # 16101
+Configuration: # 16201
+Configuration: # 16301
+Configuration: # 16401
+Configuration: # 16501
+Configuration: # 16601
+Configuration: # 16701
+Configuration: # 16801
+Configuration: # 16901
+Configuration: # 17001
+Configuration: # 17101
+Configuration: # 17201
+Configuration: # 17301
+Configuration: # 17401
+Configuration: # 17501
+Configuration: # 17601
+Configuration: # 17701
+Configuration: # 17801
+Configuration: # 17901
+Configuration: # 18001
+Configuration: # 18101
+Configuration: # 18201
+Configuration: # 18301
+Configuration: # 18401
+Configuration: # 18501
+Configuration: # 18601
+Configuration: # 18701
+Configuration: # 18801
+Configuration: # 18901
+Configuration: # 19001
+Configuration: # 19101
+Configuration: # 19201
+Configuration: # 19301
+Configuration: # 19401
+Configuration: # 19501
+Configuration: # 19601
+**************** End of Error Calculation ****************
+**************** Begin of Error Analysis for the Training Data Set ****************
+----------------------------------------------------------------------------------------------
+      File      | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
+----------------------------------------------------------------------------------------------
+md_1000K.xyz         2500      125000     0.002205      0.002763      0.072917      0.099798  
+md_1300K.xyz         5000      250000     0.002679      0.003404      0.086315      0.120107  
+md_1600K.xyz         3000      150000     0.004113      0.005451      0.106349      0.151597  
+md_2000K.xyz         1742       87100     0.011343      0.014533      0.238831      0.339453  
+md_300K.xyz          3000      150000     0.001094      0.001390      0.045625      0.060440  
+md_600K.xyz          4446      222300     0.001651      0.002084      0.057208      0.077097  
+----------------------------------------------------------------------------------------------
+All files           19688      984400     0.003130      0.005329      0.088388      0.143264  
+----------------------------------------------------------------------------------------------
+**************** End of Error Analysis for the Training Data Set ****************
+Total wall time: 0:11:54

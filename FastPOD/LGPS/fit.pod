@@ -1,0 +1,4 @@
+# Demonstrate fitpod for POD potential for LGPS
+
+units metal
+fitpod LGPS_param.pod LGPS_data.pod

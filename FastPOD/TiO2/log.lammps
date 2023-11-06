@@ -1,0 +1,233 @@
+LAMMPS (15 Jun 2023 - Development - patch_15Jun2023-208-g9fb1ad52a0-modified)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# Demonstrate fitpod for POD potential for TiO2
+
+units metal
+fitpod TiO2_param.pod TiO2_data.pod
+Fast POD descriptors are used for this potential.
+**************** Begin of POD Potentials ****************
+species: Ti O 
+periodic boundary conditions: 1 1 1
+inner cut-off radius: 1
+outer cut-off radius: 5
+bessel polynomial degree: 8
+inverse polynomial degree: 12
+one-body potential: 1
+two-body radial basis functions: 10
+three-body radial basis functions: 8
+three-body angular degree: 4
+four-body radial basis functions: 6
+four-body angular degree: 3
+five-body radial basis functions: 3
+five-body angular degree: 2
+six-body radial basis functions: 3
+six-body angular degree: 2
+seven-body radial basis functions: 2
+seven-body angular degree: 2
+number of descriptors for one-body potential: 2
+number of descriptors for two-body potential: 30
+number of descriptors for three-body potential: 240
+number of descriptors for four-body potential: 336
+number of descriptors for five-body potential: 240
+number of descriptors for six-body potential: 468
+number of descriptors for seven-body potential: 260
+total number of descriptors for all potentials: 1576
+**************** End of POD Potentials ****************
+
+**************** Begin of Data File ****************
+file format: extxyz
+file extension: xyz
+path to training data set: ../../TrainingData/TiO2
+path to test data set: ../../TestData/TiO2
+basename for output files: TiO2
+training fraction: 1
+test fraction: 1
+randomize training data set: 1
+randomize test data set: 1
+error analysis for training data set: 1
+error analysis for test data set: 1
+energy/force calculation for training data set: 0
+energy/force calculation for test data set: 0
+fitting weight for energy: 100
+fitting weight for force: 1
+fitting weight for stress: 0
+save pod descriptors: 0
+compute pod descriptors: 0
+**************** End of Data File ****************
+**************** Begin of Training Data Set ****************
+-----------------------------------------------------------------
+      data file      | number of configurations | number of atoms
+-----------------------------------------------------------------
+ TiO2trainingset.xyz |              3908        |       82653
+-----------------------------------------------------------------
+number of files: 1
+number of configurations in all files: 3908
+number of atoms in all files: 82653
+minimum number of atoms: 6
+maximum number of atoms: 95
+**************** End of Training Data Set ****************
+**************** Begin of Test Data Set ****************
+-------------------------------------------------------------
+    data file    | number of configurations | number of atoms
+-------------------------------------------------------------
+ TiO2testset.xyz |              3908        |       82653
+-------------------------------------------------------------
+number of files: 1
+number of configurations in all files: 3908
+number of atoms in all files: 82653
+minimum number of atoms: 6
+maximum number of atoms: 95
+**************** End of Test Data Set ****************
+maximum number of atoms in periodic domain: 95
+maximum number of atoms in extended domain: 2565
+maximum number of neighbors in extended domain: 243675
+size of double memory: 20945040
+size of int memory: 1
+size of descriptor matrix: 1576 x 1576
+**************** End of Memory Allocation ****************
+**************** Begin of Least-Squares Fitting ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+Configuration: # 301
+Configuration: # 401
+Configuration: # 501
+Configuration: # 601
+Configuration: # 701
+Configuration: # 801
+Configuration: # 901
+Configuration: # 1001
+Configuration: # 1101
+Configuration: # 1201
+Configuration: # 1301
+Configuration: # 1401
+Configuration: # 1501
+Configuration: # 1601
+Configuration: # 1701
+Configuration: # 1801
+Configuration: # 1901
+Configuration: # 2001
+Configuration: # 2101
+Configuration: # 2201
+Configuration: # 2301
+Configuration: # 2401
+Configuration: # 2501
+Configuration: # 2601
+Configuration: # 2701
+Configuration: # 2801
+Configuration: # 2901
+Configuration: # 3001
+Configuration: # 3101
+Configuration: # 3201
+Configuration: # 3301
+Configuration: # 3401
+Configuration: # 3501
+Configuration: # 3601
+Configuration: # 3701
+Configuration: # 3801
+Configuration: # 3901
+**************** End of Least-Squares Fitting ****************
+**************** Begin of Error Calculation ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+Configuration: # 301
+Configuration: # 401
+Configuration: # 501
+Configuration: # 601
+Configuration: # 701
+Configuration: # 801
+Configuration: # 901
+Configuration: # 1001
+Configuration: # 1101
+Configuration: # 1201
+Configuration: # 1301
+Configuration: # 1401
+Configuration: # 1501
+Configuration: # 1601
+Configuration: # 1701
+Configuration: # 1801
+Configuration: # 1901
+Configuration: # 2001
+Configuration: # 2101
+Configuration: # 2201
+Configuration: # 2301
+Configuration: # 2401
+Configuration: # 2501
+Configuration: # 2601
+Configuration: # 2701
+Configuration: # 2801
+Configuration: # 2901
+Configuration: # 3001
+Configuration: # 3101
+Configuration: # 3201
+Configuration: # 3301
+Configuration: # 3401
+Configuration: # 3501
+Configuration: # 3601
+Configuration: # 3701
+Configuration: # 3801
+Configuration: # 3901
+**************** End of Error Calculation ****************
+**************** Begin of Error Analysis for the Training Data Set ****************
+-----------------------------------------------------------------------------------------------------
+         File          | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
+-----------------------------------------------------------------------------------------------------
+TiO2trainingset.xyz         3908       82653     0.003074      0.004363      0.126028      0.189681  
+-----------------------------------------------------------------------------------------------------
+All files                   3908       82653     0.003074      0.004363      0.126028      0.189681  
+-----------------------------------------------------------------------------------------------------
+**************** End of Error Analysis for the Training Data Set ****************
+**************** Begin of Error Calculation ****************
+Configuration: # 1
+Configuration: # 101
+Configuration: # 201
+Configuration: # 301
+Configuration: # 401
+Configuration: # 501
+Configuration: # 601
+Configuration: # 701
+Configuration: # 801
+Configuration: # 901
+Configuration: # 1001
+Configuration: # 1101
+Configuration: # 1201
+Configuration: # 1301
+Configuration: # 1401
+Configuration: # 1501
+Configuration: # 1601
+Configuration: # 1701
+Configuration: # 1801
+Configuration: # 1901
+Configuration: # 2001
+Configuration: # 2101
+Configuration: # 2201
+Configuration: # 2301
+Configuration: # 2401
+Configuration: # 2501
+Configuration: # 2601
+Configuration: # 2701
+Configuration: # 2801
+Configuration: # 2901
+Configuration: # 3001
+Configuration: # 3101
+Configuration: # 3201
+Configuration: # 3301
+Configuration: # 3401
+Configuration: # 3501
+Configuration: # 3601
+Configuration: # 3701
+Configuration: # 3801
+Configuration: # 3901
+**************** End of Error Calculation ****************
+**************** Begin of Error Analysis for the Test Data Set ****************
+-------------------------------------------------------------------------------------------------
+       File        | # configs |  # atoms  | MAE energy  | RMSE energy | MAE force  | RMSE force
+-------------------------------------------------------------------------------------------------
+TiO2testset.xyz         3908       82653     0.003074      0.004363      0.126028      0.189681  
+-------------------------------------------------------------------------------------------------
+All files               3908       82653     0.003074      0.004363      0.126028      0.189681  
+-------------------------------------------------------------------------------------------------
+**************** End of Error Analysis for the Test Data Set ****************
+Total wall time: 0:00:56

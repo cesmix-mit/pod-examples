@@ -1,0 +1,4 @@
+# Demonstrate fitpod for POD potential for GaN
+
+units metal
+fitpod GaN_param.pod GaN_data.pod
